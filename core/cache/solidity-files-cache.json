@@ -1,0 +1,237 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/home/ahsan_dev/kerja/nusatech/specta/smart-contract-swap/core/contracts/FACTORY.sol": {
+      "lastModificationDate": 1707909825219,
+      "contentHash": "a75aba74b8b592642ca1935f1f8e9764",
+      "sourceName": "contracts/FACTORY.sol",
+      "solcConfig": {
+        "version": "0.5.16",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "=0.5.16"
+      ],
+      "artifacts": [
+        "IERC20",
+        "IUniswapV2Callee",
+        "IUniswapV2ERC20",
+        "IUniswapV2Factory",
+        "IUniswapV2Pair",
+        "Math",
+        "SafeMath",
+        "SpcSwapFactory",
+        "UQ112x112",
+        "UniswapV2ERC20",
+        "UniswapV2Pair"
+      ]
+    },
+    "/home/ahsan_dev/kerja/nusatech/specta/smart-contract-swap/core/contracts/MULTICALL.sol": {
+      "lastModificationDate": 1707826084071,
+      "contentHash": "7acdfa1237ef7407a70e7f63bb8ccaa9",
+      "sourceName": "contracts/MULTICALL.sol",
+      "solcConfig": {
+        "version": "0.8.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.12"
+      ],
+      "artifacts": [
+        "Multicall3"
+      ]
+    },
+    "/home/ahsan_dev/kerja/nusatech/specta/smart-contract-swap/core/contracts/TokenLockFactory.sol": {
+      "lastModificationDate": 1707826084071,
+      "contentHash": "1266079e58c24d8392043b2d3d79892a",
+      "sourceName": "contracts/TokenLockFactory.sol",
+      "solcConfig": {
+        "version": "0.8.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.1",
+        "^0.8.0",
+        "^0.8.2",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "AddressUpgradeable",
+        "ContextUpgradeable",
+        "IERC20",
+        "IERC20PermitUpgradeable",
+        "IERC20Upgradeable",
+        "IFeeAggregator",
+        "IPSIPadTokenLockFactory",
+        "IWETH",
+        "Initializable",
+        "OwnableUpgradeable",
+        "SafeERC20Upgradeable",
+        "SafeMath",
+        "TokenLockFactory"
+      ]
+    },
+    "/home/ahsan_dev/kerja/nusatech/specta/smart-contract-swap/core/contracts/ROUTER.sol": {
+      "lastModificationDate": 1708410683231,
+      "contentHash": "34fa6f88b8d95a6f1a7680b0d24b054c",
+      "sourceName": "contracts/ROUTER.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "=0.6.6"
+      ],
+      "artifacts": [
+        "IERC20",
+        "IUniswapV2Factory",
+        "IUniswapV2Pair",
+        "IUniswapV2Router01",
+        "IUniswapV2Router02",
+        "IWETH",
+        "SafeMath",
+        "SpcV2Router02",
+        "TransferHelper",
+        "UniswapV2Library"
+      ]
+    },
+    "/home/ahsan_dev/kerja/nusatech/specta/smart-contract-swap/core/contracts/masterchef.sol": {
+      "lastModificationDate": 1708932046574,
+      "contentHash": "d07a17738930e907c213db6420d9e60d",
+      "sourceName": "contracts/masterchef.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.2 <0.8.0",
+        ">=0.6.0 <0.8.0",
+        ">=0.6.0 <0.8.0",
+        ">=0.6.0 <0.8.0",
+        ">=0.6.0 <0.8.0",
+        ">=0.6.0 <0.8.0",
+        ">=0.6.0 <0.8.0",
+        "0.6.12"
+      ],
+      "artifacts": [
+        "Address",
+        "CityLiquidity",
+        "Context",
+        "IERC20",
+        "Ownable",
+        "ReentrancyGuard",
+        "SafeERC20",
+        "SafeMath"
+      ]
+    }
+  }
+}

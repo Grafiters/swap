@@ -1,0 +1,469 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/home/qenjie/spc/swap/contract/core/contracts/FACTORY.sol": {
+      "lastModificationDate": 1701316161223,
+      "contentHash": "b9ec8d7c390a4756ea3e0c589b36116b",
+      "sourceName": "contracts/FACTORY.sol",
+      "solcConfig": {
+        "version": "0.5.16",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "=0.5.16"
+      ],
+      "artifacts": [
+        "IERC20",
+        "IUniswapV2Callee",
+        "IUniswapV2ERC20",
+        "IUniswapV2Factory",
+        "IUniswapV2Pair",
+        "Math",
+        "SpcSwapFactory",
+        "SafeMath",
+        "UQ112x112",
+        "UniswapV2ERC20",
+        "UniswapV2Pair"
+      ]
+    },
+    "/home/qenjie/spc/swap/contract/core/contracts/ROUTER.sol": {
+      "lastModificationDate": 1701437299017,
+      "contentHash": "32f1688031d4a9eab3b4a5c9b3dfbdc0",
+      "sourceName": "contracts/ROUTER.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "=0.6.6"
+      ],
+      "artifacts": [
+        "IERC20",
+        "IUniswapV2Factory",
+        "IUniswapV2Pair",
+        "IUniswapV2Router01",
+        "IUniswapV2Router02",
+        "IWETH",
+        "SpcV2Router02",
+        "SafeMath",
+        "TransferHelper",
+        "UniswapV2Library"
+      ]
+    },
+    "/home/qenjie/spc/swap/contract/core/contracts/masterchef.sol": {
+      "lastModificationDate": 1702951002553,
+      "contentHash": "61e69e5b771a9159fd6bad3f25bdeb99",
+      "sourceName": "contracts/masterchef.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.2 <0.8.0",
+        ">=0.6.0 <0.8.0",
+        ">=0.6.0 <0.8.0",
+        ">=0.6.0 <0.8.0",
+        ">=0.6.0 <0.8.0",
+        ">=0.6.0 <0.8.0",
+        ">=0.6.0 <0.8.0",
+        "0.6.12"
+      ],
+      "artifacts": [
+        "Address",
+        "Context",
+        "IERC20",
+        "Ownable",
+        "ReentrancyGuard",
+        "SafeERC20",
+        "SafeMath",
+        "CityLiquidity"
+      ]
+    },
+    "/home/qenjie/spc/swap/contract/core/contracts/MULTICALL.sol": {
+      "lastModificationDate": 1701237979525,
+      "contentHash": "7acdfa1237ef7407a70e7f63bb8ccaa9",
+      "sourceName": "contracts/MULTICALL.sol",
+      "solcConfig": {
+        "version": "0.8.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.12"
+      ],
+      "artifacts": [
+        "Multicall3"
+      ]
+    },
+    "/home/qenjie/spc/swap/contract/core/contracts/TokenLockFactory.sol": {
+      "lastModificationDate": 1701237979515,
+      "contentHash": "b4f5508e6a7f2fda0708494dc2c69301",
+      "sourceName": "contracts/TokenLockFactory.sol",
+      "solcConfig": {
+        "version": "0.8.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.1",
+        "^0.8.0",
+        "^0.8.2",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "AddressUpgradeable",
+        "ContextUpgradeable",
+        "IERC20",
+        "IERC20PermitUpgradeable",
+        "IERC20Upgradeable",
+        "IFeeAggregator",
+        "IPSIPadTokenLockFactory",
+        "IWETH",
+        "Initializable",
+        "OwnableUpgradeable",
+        "SafeERC20Upgradeable",
+        "SafeMath",
+        "TokenLockFactory"
+      ]
+    },
+    "/home/qenjie/spc/swap/contract/farming/contracts/FACTORY.sol": {
+      "lastModificationDate": 1703710866573,
+      "contentHash": "b9ec8d7c390a4756ea3e0c589b36116b",
+      "sourceName": "contracts/FACTORY.sol",
+      "solcConfig": {
+        "version": "0.5.16",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "=0.5.16"
+      ],
+      "artifacts": [
+        "IERC20",
+        "IUniswapV2Callee",
+        "IUniswapV2ERC20",
+        "IUniswapV2Factory",
+        "IUniswapV2Pair",
+        "Math",
+        "SpcSwapFactory",
+        "SafeMath",
+        "UQ112x112",
+        "UniswapV2ERC20",
+        "UniswapV2Pair"
+      ]
+    },
+    "/home/qenjie/spc/swap/contract/farming/contracts/ROUTER.sol": {
+      "lastModificationDate": 1703710866573,
+      "contentHash": "32f1688031d4a9eab3b4a5c9b3dfbdc0",
+      "sourceName": "contracts/ROUTER.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "=0.6.6"
+      ],
+      "artifacts": [
+        "IERC20",
+        "IUniswapV2Factory",
+        "IUniswapV2Pair",
+        "IUniswapV2Router01",
+        "IUniswapV2Router02",
+        "IWETH",
+        "SpcV2Router02",
+        "SafeMath",
+        "TransferHelper",
+        "UniswapV2Library"
+      ]
+    },
+    "/home/qenjie/spc/swap/contract/farming/contracts/masterchef.sol": {
+      "lastModificationDate": 1703710866573,
+      "contentHash": "61e69e5b771a9159fd6bad3f25bdeb99",
+      "sourceName": "contracts/masterchef.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.2 <0.8.0",
+        ">=0.6.0 <0.8.0",
+        ">=0.6.0 <0.8.0",
+        ">=0.6.0 <0.8.0",
+        ">=0.6.0 <0.8.0",
+        ">=0.6.0 <0.8.0",
+        ">=0.6.0 <0.8.0",
+        "0.6.12"
+      ],
+      "artifacts": [
+        "Address",
+        "Context",
+        "IERC20",
+        "Ownable",
+        "ReentrancyGuard",
+        "SafeERC20",
+        "SafeMath",
+        "CityLiquidity"
+      ]
+    },
+    "/home/qenjie/spc/swap/contract/farming/contracts/MULTICALL.sol": {
+      "lastModificationDate": 1703710866573,
+      "contentHash": "7acdfa1237ef7407a70e7f63bb8ccaa9",
+      "sourceName": "contracts/MULTICALL.sol",
+      "solcConfig": {
+        "version": "0.8.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.12"
+      ],
+      "artifacts": [
+        "Multicall3"
+      ]
+    },
+    "/home/qenjie/spc/swap/contract/farming/contracts/TokenLockFactory.sol": {
+      "lastModificationDate": 1703710866573,
+      "contentHash": "1266079e58c24d8392043b2d3d79892a",
+      "sourceName": "contracts/TokenLockFactory.sol",
+      "solcConfig": {
+        "version": "0.8.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.1",
+        "^0.8.0",
+        "^0.8.2",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "AddressUpgradeable",
+        "ContextUpgradeable",
+        "IERC20",
+        "IERC20PermitUpgradeable",
+        "IERC20Upgradeable",
+        "IFeeAggregator",
+        "IPSIPadTokenLockFactory",
+        "IWETH",
+        "Initializable",
+        "OwnableUpgradeable",
+        "SafeERC20Upgradeable",
+        "SafeMath",
+        "TokenLockFactory"
+      ]
+    }
+  }
+}
