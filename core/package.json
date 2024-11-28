@@ -36,7 +36,7 @@
     "typescript": "^3.7.3"
   },
   "scripts": {
-    "deploy": "npx hardhat run scripts/deploy.js --network dev",
+    "deploy": "npx hardhat run scripts/deploy.js --network spc",
     "clean": "npx hardhat clean"
   },
   "license": "GPL-3.0-or-later",

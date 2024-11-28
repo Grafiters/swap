@@ -1,4 +1,4 @@
-// "SPDX-License-Identifier: MIT"
+// SPDX-License-Identifier: MIT
 pragma solidity >=0.6.2 <0.8.0;
 
 /**
@@ -333,6 +333,7 @@ abstract contract ReentrancyGuard {
 }
 
 // File: @openzeppelin/contracts@3.4.1/math/SafeMath.sol
+
 
 
 
@@ -740,9 +741,9 @@ pragma experimental ABIEncoderV2;
 
 
 
-/// @notice The (older) MasterChef contract gives out a constant number of CITY tokens per block.
+/// @notice The (older) MasterChef contract gives out a constant number of ROBO tokens per block.
 
-/// It is the only address with minting rights for CITY.
+/// It is the only address with minting rights for ROBO.
 
 /// The idea for this MasterChef V2 (MCV2) contract is therefore to be the owner of a dummy token
 
@@ -750,7 +751,7 @@ pragma experimental ABIEncoderV2;
 
 /// The allocation point for this pool on MCV1 is the total allocation point for all pools that receive incentives.
 
-contract CityLiquidity is Ownable, ReentrancyGuard {
+contract RoboLiquidity is Ownable, ReentrancyGuard {
 
     using SafeMath for uint256;
 
@@ -766,19 +767,19 @@ contract CityLiquidity is Ownable, ReentrancyGuard {
 
     ///
 
-    /// We do some fancy math here. Basically, any point in time, the amount of CITYs
+    /// We do some fancy math here. Basically, any point in time, the amount of BETHs
 
     /// entitled to a user but is pending to be distributed is:
 
     ///
 
-    ///   pending reward = (user share * pool.accCityPerShare) - user.rewardDebt
+    ///   pending reward = (user share * pool.accRoboPerShare) - user.rewardDebt
 
     ///
 
     ///   Whenever a user deposits or withdraws LP tokens to a pool. Here's what happens:
 
-    ///   1. The pool's `accCityPerShare` (and `lastRewardBlock`) gets updated.
+    ///   1. The pool's `accRoboPerShare` (and `lastRewardBlock`) gets updated.
 
     ///   2. User receives the pending reward sent to his/her address.
 
@@ -804,9 +805,9 @@ contract CityLiquidity is Ownable, ReentrancyGuard {
 
     ///     Also known as the amount of "multipliers". Combined with `totalXAllocPoint`, it defines the % of
 
-    ///     CITY rewards each pool gets.
+    ///     ROBO rewards each pool gets.
 
-    /// `accCityPerShare` Accumulated CITYs per share, times 1e12.
+    /// `accRoboPerShare` Accumulated BETHs per share, times 1e12.
 
     /// `lastRewardBlock` Last block number that pool update action is executed.
 
@@ -816,13 +817,13 @@ contract CityLiquidity is Ownable, ReentrancyGuard {
 
     ///     `allocPoint` and their own `totalSpecialAllocPoint` are designed to handle the distribution of
 
-    ///     the CITY rewards to all the PaniceSwap products.
+    ///     the ROBO rewards to all the PaniceSwap products.
 
     /// `totalBoostedShare` The total amount of user shares in each pool. After considering the share boosts.
 
     struct PoolInfo {
 
-        uint256 accCityPerShare;
+        uint256 accRoboPerShare;
 
         uint256 lastRewardBlock;
 
@@ -836,9 +837,9 @@ contract CityLiquidity is Ownable, ReentrancyGuard {
 
 
 
-    /// @notice Address of CITY contract.
+    /// @notice Address of ROBO contract.
 
-    IERC20 public immutable CITY;
+    IERC20 public immutable ROBO;
 
 
 
@@ -880,17 +881,17 @@ contract CityLiquidity is Ownable, ReentrancyGuard {
 
     uint256 public totalSpecialAllocPoint;
 
-    uint256 public constant ACC_CITY_PRECISION = 1e18;
+    uint256 public constant ACC_ROBO_PRECISION = 1e18;
 
 
 
-    // City tokens created per block.
+    // ROBO tokens created per block.
 
-    uint256 public totalCityPerBlock;
+    uint256 public totalRoboPerBlock;
 
-    // address that approved MasterChef with City so MasterChef can use transferFrom to send out the City rewards
+    // address that approved MasterChef with ROBO so MasterChef can use transferFrom to send out the ROBO rewards
 
-    address public cityTreasury;
+    address public roboTreasury;
 
 
 
@@ -903,21 +904,21 @@ contract CityLiquidity is Ownable, ReentrancyGuard {
     uint256 public constant MAX_BOOST_PRECISION = 200 * 1e10;
 
 
-    uint256 public constant CITY_RATE_TOTAL_PRECISION = 1e12;
+    uint256 public constant ROBO_RATE_TOTAL_PRECISION = 1e12;
 
-    /// @notice CITY distribute % for regular farm pool
+    /// @notice ROBO distribute % for regular farm pool
 
-    uint256 public cityRateToRegularFarm = CITY_RATE_TOTAL_PRECISION;
+    uint256 public roboRateToRegularFarm = ROBO_RATE_TOTAL_PRECISION;
 
-    /// @notice CITY distribute % for special pools
+    /// @notice ROBO distribute % for special pools
 
-    uint256 public cityRateToSpecialFarm = 0;
+    uint256 public roboRateToSpecialFarm = 0;
 
-    /// @notice CITY distribute % for burn
+    /// @notice ROBO distribute % for burn
 
-    uint256 public cityRateToBurn = 0;
+    uint256 public roboRateToBurn = 0;
 
-    /// @notice The last block number of CITY burn action being executed.
+    /// @notice The last block number of ROBO burn action being executed.
 
     uint256 public lastBurnedBlock;
 
@@ -929,7 +930,7 @@ contract CityLiquidity is Ownable, ReentrancyGuard {
 
     event SetPool(uint256 indexed pid, uint256 allocPoint);
 
-    event UpdatePool(uint256 indexed pid, uint256 lastRewardBlock, uint256 lpSupply, uint256 accCityPerShare);
+    event UpdatePool(uint256 indexed pid, uint256 lastRewardBlock, uint256 lpSupply, uint256 accRoboPerShare);
 
     event Deposit(address indexed user, uint256 indexed pid, uint256 amount);
 
@@ -939,7 +940,7 @@ contract CityLiquidity is Ownable, ReentrancyGuard {
 
 
 
-    event UpdateCityRate(uint256 burnRate, uint256 regularFarmRate, uint256 specialFarmRate);
+    event UpdateRoboRate(uint256 burnRate, uint256 regularFarmRate, uint256 specialFarmRate);
 
     event UpdateBurnAdmin(address indexed oldAdmin, address indexed newAdmin);
 
@@ -951,27 +952,27 @@ contract CityLiquidity is Ownable, ReentrancyGuard {
 
 
 
-    /// @param _CITY The CITY token contract address.
+    /// @param _ROBO The ROBO token contract address.
 
-    /// @param _totalCityPerBlock CITY to distribute per block
+    /// @param _totalRoboPerBlock ROBO to distribute per block
 
-    /// @param _cityTreasury address that holds CITY and approves MasterChefV2 for spending it
+    /// @param _roboTreasury address that holds ROBO and approves MasterChefV2 for spending it
 
     constructor(
 
-        IERC20 _CITY,
+        IERC20 _ROBO,
 
-        uint256 _totalCityPerBlock,
+        uint256 _totalRoboPerBlock,
 
-        address _cityTreasury
+        address _roboTreasury
 
     ) public {
 
-        CITY = _CITY;
+        ROBO = _ROBO;
 
-        totalCityPerBlock = _totalCityPerBlock;
+        totalRoboPerBlock = _totalRoboPerBlock;
 
-        cityTreasury = _cityTreasury;
+        roboTreasury = _roboTreasury;
 
 
 
@@ -985,33 +986,33 @@ contract CityLiquidity is Ownable, ReentrancyGuard {
 
 
 
-    // changes the address of the City treassury.
+    // changes the address of the ROBO treassury.
 
-    // the City treassury needs to approve the masterChef with City
+    // the ROBO treassury needs to approve the masterChef with BETH
 
-    // so MasterChef can use transferFrom to distribute the City.
+    // so MasterChef can use transferFrom to distribute the ROBO.
 
-    function changeCityTreasury(
+    function changeroboTreasury(
 
-        address _cityTreasury
+        address _roboTreasury
 
     ) public onlyOwner {
 
-        cityTreasury = _cityTreasury;
+        roboTreasury = _roboTreasury;
 
     }
 
 
 
-    // changes the amount of City beeing distributed per block.
+    // changes the amount of ROBO beeing distributed per block.
 
-    // if _withUpdate is false, all pools need to be updated BEFORE updating the City per block.
+    // if _withUpdate is false, all pools need to be updated BEFORE updating the ROBO per block.
 
-    // otherwise the new City per block would be used since the last pool update.
+    // otherwise the new ROBO per block would be used since the last pool update.
 
-    function changeCityPerBlock(
+    function changeroboPerBlock(
 
-        uint256 _totalCityPerBlock,
+        uint256 _totalRoboPerBlock,
 
         bool _withUpdate
 
@@ -1023,7 +1024,7 @@ contract CityLiquidity is Ownable, ReentrancyGuard {
 
         }
 
-        totalCityPerBlock = _totalCityPerBlock;
+        totalRoboPerBlock = _totalRoboPerBlock;
 
     }
 
@@ -1067,7 +1068,7 @@ contract CityLiquidity is Ownable, ReentrancyGuard {
 
     /// @param _withUpdate Whether call "massUpdatePools" operation.
 
-    /// only for CITY distributions within PaniceSwap products.
+    /// only for ROBO distributions within PaniceSwap products.
 
     function add(
 
@@ -1115,7 +1116,7 @@ contract CityLiquidity is Ownable, ReentrancyGuard {
 
         lastRewardBlock: block.number,
 
-        accCityPerShare: 0,
+        accRoboPerShare: 0,
 
         isRegular: _isRegular,
 
@@ -1131,7 +1132,7 @@ contract CityLiquidity is Ownable, ReentrancyGuard {
 
 
 
-    /// @notice Update the given pool's CITY allocation point. Can only be called by the owner.
+    /// @notice Update the given pool's ROBO allocation point. Can only be called by the owner.
 
     /// @param _pid The id of the pool. See `poolInfo`.
 
@@ -1181,19 +1182,19 @@ contract CityLiquidity is Ownable, ReentrancyGuard {
 
 
 
-    /// @notice View function for checking pending CITY rewards.
+    /// @notice View function for checking pending ROBO rewards.
 
     /// @param _pid The id of the pool. See `poolInfo`.
 
     /// @param _user Address of the user.
 
-    function pendingCity(uint256 _pid, address _user) external view returns (uint256) {
+    function pendingRobo(uint256 _pid, address _user) external view returns (uint256) {
 
         PoolInfo memory pool = poolInfo[_pid];
 
         UserInfo memory user = userInfo[_pid][_user];
 
-        uint256 accCityPerShare = pool.accCityPerShare;
+        uint256 accRoboPerShare = pool.accRoboPerShare;
 
         uint256 lpSupply = pool.totalBoostedShare;
 
@@ -1205,13 +1206,13 @@ contract CityLiquidity is Ownable, ReentrancyGuard {
 
 
 
-            uint256 cityReward = multiplier.mul(cityPerBlock(pool.isRegular)).mul(pool.allocPoint).div(
+            uint256 roboReward = multiplier.mul(roboPerBlock(pool.isRegular)).mul(pool.allocPoint).div(
 
                 (pool.isRegular ? totalRegularAllocPoint : totalSpecialAllocPoint)
 
             );
 
-            accCityPerShare = accCityPerShare.add(cityReward.mul(ACC_CITY_PRECISION).div(lpSupply));
+            accRoboPerShare = accRoboPerShare.add(roboReward.mul(ACC_ROBO_PRECISION).div(lpSupply));
 
         }
 
@@ -1219,7 +1220,7 @@ contract CityLiquidity is Ownable, ReentrancyGuard {
 
         uint256 boostedAmount = user.amount.mul(getBoostMultiplier(_user, _pid)).div(BOOST_PRECISION);
 
-        return boostedAmount.mul(accCityPerShare).div(ACC_CITY_PRECISION).sub(user.rewardDebt);
+        return boostedAmount.mul(accRoboPerShare).div(ACC_ROBO_PRECISION).sub(user.rewardDebt);
 
     }
 
@@ -1246,19 +1247,19 @@ contract CityLiquidity is Ownable, ReentrancyGuard {
 
 
 
-    /// @notice Calculates and returns the `amount` of CITY per block.
+    /// @notice Calculates and returns the `amount` of ROBO per block.
 
     /// @param _isRegular If the pool belongs to regular or special.
 
-    function cityPerBlock(bool _isRegular) public view returns (uint256 amount) {
+    function roboPerBlock(bool _isRegular) public view returns (uint256 amount) {
 
         if (_isRegular) {
 
-            amount = totalCityPerBlock.mul(cityRateToRegularFarm).div(CITY_RATE_TOTAL_PRECISION);
+            amount = totalRoboPerBlock.mul(roboRateToRegularFarm).div(ROBO_RATE_TOTAL_PRECISION);
 
         } else {
 
-            amount = totalCityPerBlock.mul(cityRateToSpecialFarm).div(CITY_RATE_TOTAL_PRECISION);
+            amount = totalRoboPerBlock.mul(roboRateToRegularFarm).div(ROBO_RATE_TOTAL_PRECISION);
 
         }
 
@@ -1266,11 +1267,11 @@ contract CityLiquidity is Ownable, ReentrancyGuard {
 
 
 
-    /// @notice Calculates and returns the `amount` of CITY per block to burn.
+    /// @notice Calculates and returns the `amount` of ROBO per block to burn.
 
-    function cityPerBlockToBurn() public view returns (uint256 amount) {
+    function roboPerBlockToBurn() public view returns (uint256 amount) {
 
-        amount = totalCityPerBlock.mul(cityRateToBurn).div(CITY_RATE_TOTAL_PRECISION);
+        amount = totalRoboPerBlock.mul(roboRateToBurn).div(ROBO_RATE_TOTAL_PRECISION);
 
     }
 
@@ -1298,13 +1299,13 @@ contract CityLiquidity is Ownable, ReentrancyGuard {
 
                 uint256 multiplier = block.number.sub(pool.lastRewardBlock);
 
-                uint256 cityReward = multiplier.mul(cityPerBlock(pool.isRegular)).mul(pool.allocPoint).div(
+                uint256 roboReward = multiplier.mul(roboPerBlock(pool.isRegular)).mul(pool.allocPoint).div(
 
                     totalAllocPoint
 
                 );
 
-                pool.accCityPerShare = pool.accCityPerShare.add((cityReward.mul(ACC_CITY_PRECISION).div(lpSupply)));
+                pool.accRoboPerShare = pool.accRoboPerShare.add((roboReward.mul(ACC_ROBO_PRECISION).div(lpSupply)));
 
             }
 
@@ -1312,7 +1313,7 @@ contract CityLiquidity is Ownable, ReentrancyGuard {
 
             poolInfo[_pid] = pool;
 
-            emit UpdatePool(_pid, pool.lastRewardBlock, lpSupply, pool.accCityPerShare);
+            emit UpdatePool(_pid, pool.lastRewardBlock, lpSupply, pool.accRoboPerShare);
 
         }
 
@@ -1350,7 +1351,7 @@ contract CityLiquidity is Ownable, ReentrancyGuard {
 
         if (user.amount > 0) {
 
-            settlePendingCity(msg.sender, _pid, multiplier);
+            settlependingRobo(msg.sender, _pid, multiplier);
 
         }
 
@@ -1376,9 +1377,9 @@ contract CityLiquidity is Ownable, ReentrancyGuard {
 
 
 
-        user.rewardDebt = user.amount.mul(multiplier).div(BOOST_PRECISION).mul(pool.accCityPerShare).div(
+        user.rewardDebt = user.amount.mul(multiplier).div(BOOST_PRECISION).mul(pool.accRoboPerShare).div(
 
-            ACC_CITY_PRECISION
+            ACC_ROBO_PRECISION
 
         );
 
@@ -1414,7 +1415,7 @@ contract CityLiquidity is Ownable, ReentrancyGuard {
 
 
 
-        settlePendingCity(msg.sender, _pid, multiplier);
+        settlependingRobo(msg.sender, _pid, multiplier);
 
 
 
@@ -1428,9 +1429,9 @@ contract CityLiquidity is Ownable, ReentrancyGuard {
 
 
 
-        user.rewardDebt = user.amount.mul(multiplier).div(BOOST_PRECISION).mul(pool.accCityPerShare).div(
+        user.rewardDebt = user.amount.mul(multiplier).div(BOOST_PRECISION).mul(pool.accRoboPerShare).div(
 
-            ACC_CITY_PRECISION
+            ACC_ROBO_PRECISION
 
         );
 
@@ -1482,11 +1483,11 @@ contract CityLiquidity is Ownable, ReentrancyGuard {
 
 
 
-    /// @notice Send CITY pending for burn to `burnAdmin`.
+    /// @notice Send ROBO pending for burn to `burnAdmin`.
 
     /// @param _withUpdate Whether call "massUpdatePools" operation.
 
-    function burnCity(bool _withUpdate) public onlyOwner {
+    function burnRobo(bool _withUpdate) public onlyOwner {
 
         if (_withUpdate) {
 
@@ -1498,13 +1499,13 @@ contract CityLiquidity is Ownable, ReentrancyGuard {
 
         uint256 multiplier = block.number.sub(lastBurnedBlock);
 
-        uint256 pendingCityToBurn = multiplier.mul(cityPerBlockToBurn());
+        uint256 pendingRoboToBurn = multiplier.mul(roboPerBlockToBurn());
 
 
 
-        // SafeTransfer CITY
+        // SafeTransfer BETH
 
-        _safeTransfer(burnAdmin, pendingCityToBurn);
+        _safeTransfer(burnAdmin, pendingRoboToBurn);
 
         lastBurnedBlock = block.number;
 
@@ -1512,17 +1513,17 @@ contract CityLiquidity is Ownable, ReentrancyGuard {
 
 
 
-    /// @notice Update the % of CITY distributions for burn, regular pools and special pools.
+    /// @notice Update the % of ROBO distributions for burn, regular pools and special pools.
 
-    /// @param _burnRate The % of CITY to burn each block.
+    /// @param _burnRate The % of ROBO to burn each block.
 
-    /// @param _regularFarmRate The % of CITY to regular pools each block.
+    /// @param _regularFarmRate The % of ROBO to regular pools each block.
 
-    /// @param _specialFarmRate The % of CITY to special pools each block.
+    /// @param _specialFarmRate The % of ROBO to special pools each block.
 
     /// @param _withUpdate Whether call "massUpdatePools" operation.
 
-    function updateCityRate(
+    function updateRoboRate(
 
         uint256 _burnRate,
 
@@ -1538,13 +1539,13 @@ contract CityLiquidity is Ownable, ReentrancyGuard {
 
             _burnRate > 0 && _regularFarmRate > 0 && _specialFarmRate > 0,
 
-            "MasterChefV2: City rate must be greater than 0"
+            "MasterChefV2: ROBO rate must be greater than 0"
 
         );
 
         require(
 
-            _burnRate.add(_regularFarmRate).add(_specialFarmRate) == CITY_RATE_TOTAL_PRECISION,
+            _burnRate.add(_regularFarmRate).add(_specialFarmRate) == ROBO_RATE_TOTAL_PRECISION,
 
             "MasterChefV2: Total rate must be 1e12"
 
@@ -1557,19 +1558,19 @@ contract CityLiquidity is Ownable, ReentrancyGuard {
         }
 
 
-        burnCity(false);
+        burnRobo(false);
 
 
 
-        cityRateToBurn = _burnRate;
+        roboRateToBurn = _burnRate;
 
-        cityRateToRegularFarm = _regularFarmRate;
+        roboRateToRegularFarm = _regularFarmRate;
 
-        cityRateToSpecialFarm = _specialFarmRate;
+        roboRateToSpecialFarm = _specialFarmRate;
 
 
 
-        emit UpdateCityRate(_burnRate, _regularFarmRate, _specialFarmRate);
+        emit UpdateRoboRate(_burnRate, _regularFarmRate, _specialFarmRate);
 
     }
 
@@ -1679,13 +1680,13 @@ contract CityLiquidity is Ownable, ReentrancyGuard {
 
         uint256 prevMultiplier = getBoostMultiplier(_user, _pid);
 
-        settlePendingCity(_user, _pid, prevMultiplier);
+        settlependingRobo(_user, _pid, prevMultiplier);
 
 
 
-        user.rewardDebt = user.amount.mul(_newMultiplier).div(BOOST_PRECISION).mul(pool.accCityPerShare).div(
+        user.rewardDebt = user.amount.mul(_newMultiplier).div(BOOST_PRECISION).mul(pool.accRoboPerShare).div(
 
-            ACC_CITY_PRECISION
+            ACC_ROBO_PRECISION
 
         );
 
@@ -1723,7 +1724,7 @@ contract CityLiquidity is Ownable, ReentrancyGuard {
 
 
 
-    /// @notice Settles, distribute the pending CITY rewards for given user.
+    /// @notice Settles, distribute the pending ROBO rewards for given user.
 
     /// @param _user The user address for settling rewards.
 
@@ -1731,7 +1732,7 @@ contract CityLiquidity is Ownable, ReentrancyGuard {
 
     /// @param _boostMultiplier The user boost multiplier in specific pool id.
 
-    function settlePendingCity(
+    function settlependingRobo(
 
         address _user,
 
@@ -1743,15 +1744,13 @@ contract CityLiquidity is Ownable, ReentrancyGuard {
 
         UserInfo memory user = userInfo[_pid][_user];
 
-
-
         uint256 boostedAmount = user.amount.mul(_boostMultiplier).div(BOOST_PRECISION);
 
-        uint256 accCity = boostedAmount.mul(poolInfo[_pid].accCityPerShare).div(ACC_CITY_PRECISION);
+        uint256 accRobo = boostedAmount.mul(poolInfo[_pid].accRoboPerShare).div(ACC_ROBO_PRECISION);
 
-        uint256 pending = accCity.sub(user.rewardDebt);
+        uint256 pending = accRobo.sub(user.rewardDebt);
 
-        // SafeTransfer CITY
+        // SafeTransfer BETH
 
         _safeTransfer(_user, pending);
 
@@ -1759,17 +1758,17 @@ contract CityLiquidity is Ownable, ReentrancyGuard {
 
 
 
-    /// @notice Safe Transfer CITY.
+    /// @notice Safe Transfer ROBO.
 
-    /// @param _to The CITY receiver address.
+    /// @param _to The ROBO receiver address.
 
-    /// @param _amount transfer CITY amounts.
+    /// @param _amount transfer ROBO amounts.
 
     function _safeTransfer(address _to, uint256 _amount) internal {
 
         if (_amount > 0) {
 
-            CITY.safeTransferFrom(cityTreasury, _to, _amount);
+            ROBO.safeTransferFrom(roboTreasury, _to, _amount);
 
         }
 

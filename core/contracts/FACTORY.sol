@@ -109,7 +109,7 @@ interface IUniswapV2Callee {
     function uniswapV2Call(address sender, uint amount0, uint amount1, bytes calldata data) external;
 }
 
-contract SpcSwapFactory is IUniswapV2Factory {
+contract RoboSwapFactory is IUniswapV2Factory {
     address public feeTo;
     address public feeToSetter;
 
@@ -159,8 +159,8 @@ contract SpcSwapFactory is IUniswapV2Factory {
 contract UniswapV2ERC20 is IUniswapV2ERC20 {
     using SafeMath for uint;
 
-    string public constant name = 'SpcSwap LP';
-    string public constant symbol = 'SPC-LP';
+    string public constant name = 'RoboSwap LP';
+    string public constant symbol = 'Robo-LP';
     uint8 public constant decimals = 18;
     uint  public totalSupply;
     mapping(address => uint) public balanceOf;

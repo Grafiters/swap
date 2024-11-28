@@ -1,269 +1,8 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "/home/ahsan_dev/kerja/nusatech/specta/smart-contract-swap/token/contracts/DAI.sol": {
-      "lastModificationDate": 1707826084135,
-      "contentHash": "ed4b075cd1a80836898579441a01365f",
-      "sourceName": "contracts/DAI.sol",
-      "solcConfig": {
-        "version": "0.5.16",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "0.5.16"
-      ],
-      "artifacts": [
-        "BEP20DAI",
-        "Context",
-        "IBEP20",
-        "Ownable",
-        "SafeMath"
-      ]
-    },
-    "/home/ahsan_dev/kerja/nusatech/specta/smart-contract-swap/token/contracts/SUSD.sol": {
-      "lastModificationDate": 1707826084135,
-      "contentHash": "87c1b4a26268c26560e3866f88a2cb46",
-      "sourceName": "contracts/SUSD.sol",
-      "solcConfig": {
-        "version": "0.5.16",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "0.5.16"
-      ],
-      "artifacts": [
-        "Context",
-        "IBEP20",
-        "Ownable",
-        "SafeMath",
-        "StableUSD"
-      ]
-    },
-    "/home/ahsan_dev/kerja/nusatech/specta/smart-contract-swap/token/contracts/USDT.sol": {
-      "lastModificationDate": 1707826084135,
-      "contentHash": "e64e7c55d19aa0c9b749869b7a55d605",
-      "sourceName": "contracts/USDT.sol",
-      "solcConfig": {
-        "version": "0.5.16",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "0.5.16"
-      ],
-      "artifacts": [
-        "BEP20USDT",
-        "Context",
-        "IBEP20",
-        "Ownable",
-        "SafeMath"
-      ]
-    },
-    "/home/ahsan_dev/kerja/nusatech/specta/smart-contract-swap/token/contracts/WBTC.sol": {
-      "lastModificationDate": 1707826084135,
-      "contentHash": "b28bcef2ead7eb66ee88bc4a373b1c99",
-      "sourceName": "contracts/WBTC.sol",
-      "solcConfig": {
-        "version": "0.4.18",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.4.18"
-      ],
-      "artifacts": [
-        "WBTC"
-      ]
-    },
-    "/home/ahsan_dev/kerja/nusatech/specta/smart-contract-swap/token/contracts/WETH.sol": {
-      "lastModificationDate": 1707826084135,
-      "contentHash": "1619a89a2858e831485d1448c0e7c039",
-      "sourceName": "contracts/WETH.sol",
-      "solcConfig": {
-        "version": "0.4.18",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.4.18"
-      ],
-      "artifacts": [
-        "WETH"
-      ]
-    },
-    "/home/ahsan_dev/kerja/nusatech/specta/smart-contract-swap/token/contracts/WSPC.sol": {
-      "lastModificationDate": 1707909792031,
-      "contentHash": "df971b075d6ff4a3fabb1988404ae0a2",
-      "sourceName": "contracts/WSPC.sol",
-      "solcConfig": {
-        "version": "0.4.18",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.4.18"
-      ],
-      "artifacts": [
-        "WSPC"
-      ]
-    },
-    "/home/ahsan_dev/kerja/nusatech/specta/smart-contract-swap/token/contracts/SpcNFT.sol": {
-      "lastModificationDate": 1708932108992,
-      "contentHash": "7ebb692ead361c356b0c1fcc98770aec",
-      "sourceName": "contracts/SpcNFT.sol",
-      "solcConfig": {
-        "version": "0.6.4",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "0.6.4"
-      ],
-      "artifacts": [
-        "Context",
-        "IERC20",
-        "Ownable",
-        "SafeMath",
-        "SpcNFT"
-      ]
-    },
-    "/home/ahsan_dev/kerja/nusatech/specta/smart-contract-swap/token/contracts/CITY.sol": {
-      "lastModificationDate": 1708932033842,
+    "/home/back-dev/Documents/alone/js/contracts/swap_contract_creator/token/contracts/CITY.sol": {
+      "lastModificationDate": 1732607086992,
       "contentHash": "d4194bbb8f7cf3a497c1de272c8472cc",
       "sourceName": "contracts/CITY.sol",
       "solcConfig": {
@@ -301,47 +40,8 @@
         "SafeMath"
       ]
     },
-    "/home/ahsan_dev/kerja/nusatech/specta/swap_contract_creator/token/contracts/CITY.sol": {
-      "lastModificationDate": 1709622548769,
-      "contentHash": "d4194bbb8f7cf3a497c1de272c8472cc",
-      "sourceName": "contracts/CITY.sol",
-      "solcConfig": {
-        "version": "0.7.0",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.7.0"
-      ],
-      "artifacts": [
-        "CityToken",
-        "Context",
-        "ERC20",
-        "IERC20",
-        "SafeMath"
-      ]
-    },
-    "/home/ahsan_dev/kerja/nusatech/specta/swap_contract_creator/token/contracts/DAI.sol": {
-      "lastModificationDate": 1709622548769,
+    "/home/back-dev/Documents/alone/js/contracts/swap_contract_creator/token/contracts/DAI.sol": {
+      "lastModificationDate": 1732607086992,
       "contentHash": "ed4b075cd1a80836898579441a01365f",
       "sourceName": "contracts/DAI.sol",
       "solcConfig": {
@@ -379,8 +79,47 @@
         "SafeMath"
       ]
     },
-    "/home/ahsan_dev/kerja/nusatech/specta/swap_contract_creator/token/contracts/SUSD.sol": {
-      "lastModificationDate": 1709622548769,
+    "/home/back-dev/Documents/alone/js/contracts/swap_contract_creator/token/contracts/ROBO.sol": {
+      "lastModificationDate": 1732181041101,
+      "contentHash": "4ceb10266df8df16132fcaf46b2cd603",
+      "sourceName": "contracts/ROBO.sol",
+      "solcConfig": {
+        "version": "0.5.16",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.5.16"
+      ],
+      "artifacts": [
+        "BEP20ROBO",
+        "Context",
+        "IBEP20",
+        "Ownable",
+        "SafeMath"
+      ]
+    },
+    "/home/back-dev/Documents/alone/js/contracts/swap_contract_creator/token/contracts/SUSD.sol": {
+      "lastModificationDate": 1732607086992,
       "contentHash": "87c1b4a26268c26560e3866f88a2cb46",
       "sourceName": "contracts/SUSD.sol",
       "solcConfig": {
@@ -418,8 +157,8 @@
         "StableUSD"
       ]
     },
-    "/home/ahsan_dev/kerja/nusatech/specta/swap_contract_creator/token/contracts/USDT.sol": {
-      "lastModificationDate": 1709622548773,
+    "/home/back-dev/Documents/alone/js/contracts/swap_contract_creator/token/contracts/USDT.sol": {
+      "lastModificationDate": 1732159455791,
       "contentHash": "e64e7c55d19aa0c9b749869b7a55d605",
       "sourceName": "contracts/USDT.sol",
       "solcConfig": {
@@ -457,8 +196,8 @@
         "SafeMath"
       ]
     },
-    "/home/ahsan_dev/kerja/nusatech/specta/swap_contract_creator/token/contracts/SpcNFT.sol": {
-      "lastModificationDate": 1709622548769,
+    "/home/back-dev/Documents/alone/js/contracts/swap_contract_creator/token/contracts/SpcNFT.sol": {
+      "lastModificationDate": 1732607086992,
       "contentHash": "7ebb692ead361c356b0c1fcc98770aec",
       "sourceName": "contracts/SpcNFT.sol",
       "solcConfig": {
@@ -496,8 +235,43 @@
         "SpcNFT"
       ]
     },
-    "/home/ahsan_dev/kerja/nusatech/specta/swap_contract_creator/token/contracts/WBTC.sol": {
-      "lastModificationDate": 1709622548773,
+    "/home/back-dev/Documents/alone/js/contracts/swap_contract_creator/token/contracts/WBETH.sol": {
+      "lastModificationDate": 1732175181479,
+      "contentHash": "a345729c59cf1827726a3cf66cb90e92",
+      "sourceName": "contracts/WBETH.sol",
+      "solcConfig": {
+        "version": "0.4.18",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.4.18"
+      ],
+      "artifacts": [
+        "WBETH"
+      ]
+    },
+    "/home/back-dev/Documents/alone/js/contracts/swap_contract_creator/token/contracts/WBTC.sol": {
+      "lastModificationDate": 1732607086993,
       "contentHash": "b28bcef2ead7eb66ee88bc4a373b1c99",
       "sourceName": "contracts/WBTC.sol",
       "solcConfig": {
@@ -531,8 +305,8 @@
         "WBTC"
       ]
     },
-    "/home/ahsan_dev/kerja/nusatech/specta/swap_contract_creator/token/contracts/WETH.sol": {
-      "lastModificationDate": 1709622548773,
+    "/home/back-dev/Documents/alone/js/contracts/swap_contract_creator/token/contracts/WETH.sol": {
+      "lastModificationDate": 1732159455791,
       "contentHash": "1619a89a2858e831485d1448c0e7c039",
       "sourceName": "contracts/WETH.sol",
       "solcConfig": {
@@ -566,8 +340,8 @@
         "WETH"
       ]
     },
-    "/home/ahsan_dev/kerja/nusatech/specta/swap_contract_creator/token/contracts/WSPC.sol": {
-      "lastModificationDate": 1709622548773,
+    "/home/back-dev/Documents/alone/js/contracts/swap_contract_creator/token/contracts/WSPC.sol": {
+      "lastModificationDate": 1732607086993,
       "contentHash": "df971b075d6ff4a3fabb1988404ae0a2",
       "sourceName": "contracts/WSPC.sol",
       "solcConfig": {

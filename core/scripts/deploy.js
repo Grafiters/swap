@@ -1,7 +1,7 @@
 const { writeAddr,writeJson } = require("./artifact_log")
-const WSPCJSON = require("../../deployments/1503/WSPC")
-const CITYJSON = require("../../deployments/1503/CITY")
-const SUSDJSON = require("../../deployments/1503/SUSD")
+const WBETHJSON = require("../../deployments/97/WBETH")
+const ROBOJSON = require("../../deployments/97/ROBO")
+const USDTJSON = require("../../deployments/97/USDT")
 
 async function main() {
     // This is just a convenience check
@@ -26,14 +26,14 @@ async function main() {
     feeToSetter = deployer.getAddress()
 
     // // Fill your address as feeToSetter in constructor -> Deploy
-    const _SpcSwapFactory = await ethers.getContractFactory("SpcSwapFactory");
-    const SpcSwapFactory = await _SpcSwapFactory.deploy(feeToSetter);
-    await SpcSwapFactory.deployed();
-    console.log("SpcSwapFactory address:", SpcSwapFactory.address);
-    await writeAddr(SpcSwapFactory.address, "SpcSwapFactory");
+    const _RoboSwapFactory = await ethers.getContractFactory("RoboSwapFactory");
+    const RoboSwapFactory = await _RoboSwapFactory.deploy(feeToSetter);
+    await RoboSwapFactory.deployed();
+    console.log("RoboSwapFactory address:", RoboSwapFactory.address);
+    await writeAddr(RoboSwapFactory.address, "RoboSwapFactory");
 
-    const SpcSwapFactoryAddress = require("../../deployments/1503/SpcSwapFactory")
-    const LFactory = await ethers.getContractAt("SpcSwapFactory", SpcSwapFactoryAddress.address);
+    const RoboSwapFactoryAddress = require("../../deployments/97/RoboSwapFactory")
+    const LFactory = await ethers.getContractAt("RoboSwapFactory", RoboSwapFactoryAddress.address);
     const init_code_pair_hash = await LFactory.INIT_CODE_HASH();
     console.log("init_code_pair_hash:", init_code_pair_hash)
     await writeJson("INIT_CODE_PAIR_HASH", init_code_pair_hash, "INIT_CODE_PAIR_HASH")
@@ -49,18 +49,18 @@ async function main() {
     const { writeHex } = require("./writeFile/writeFile")
     await writeHex()
     
-    const _SpcV2Router02 = await ethers.getContractFactory("SpcV2Router02");
-    const SpcV2Router02 = await _SpcV2Router02.deploy(SpcSwapFactoryAddress.address, WSPCJSON.address);
-    await SpcV2Router02.deployed();
-    await writeAddr(SpcV2Router02.address, "SpcV2Router02");
-    console.log("SpcV2Router02 address:", SpcV2Router02.address);
+    const _RoboV2Router02 = await ethers.getContractFactory("RoboV2Router02");
+    const RoboV2Router02 = await _RoboV2Router02.deploy(RoboSwapFactoryAddress.address, WBETHJSON.address);
+    await RoboV2Router02.deployed();
+    await writeAddr(RoboV2Router02.address, "RoboV2Router02");
+    console.log("RoboV2Router02 address:", RoboV2Router02.address);
 
     // Masterchef
-    const _SpcLiquidity = await ethers.getContractFactory("CityLiquidity");
-    const SpcLiquidity = await _SpcLiquidity.deploy(CITYJSON.address, "20000000", feeToSetter);
-    await SpcLiquidity.deployed();
-    console.log("SpcLiquidity address:", SpcLiquidity.address);
-    await writeAddr(SpcLiquidity.address, "SpcLiquidity");
+    const RobocLiquidity = await ethers.getContractFactory("RoboLiquidity");
+    const RoboLiquidity = await RobocLiquidity.deploy(ROBOJSON.address, "20000000", feeToSetter);
+    await RoboLiquidity.deployed();
+    console.log("RoboLiquidity address:", RoboLiquidity.address);
+    await writeAddr(RoboLiquidity.address, "RoboLiquidity");
 
     // TokenLockFactory
     const _TokenLockFactory = await ethers.getContractFactory("TokenLockFactory");
@@ -70,20 +70,20 @@ async function main() {
     await writeAddr(TokenLockFactory.address, "TokenLockFactory");
 
 
-    // createPair SPC-SUSD LP 
-    const _SPC_SUSD_PairAddress = await LFactory.createPair(WSPCJSON.address, SUSDJSON.address);
-    await _SPC_SUSD_PairAddress.wait();
-    const SPC_SUSD_PairAddress = await LFactory.getPair(WSPCJSON.address, SUSDJSON.address);
-    console.log("SPC-SUSD LP addresss:", SPC_SUSD_PairAddress)
-    await writeAddr(SPC_SUSD_PairAddress, "SPC_SUSD_PairAddress");
+    // createPair SPC-USDT LP 
+    const _SPC_USDT_PairAddress = await LFactory.createPair(WBETHJSON.address, USDTJSON.address);
+    await _SPC_USDT_PairAddress.wait();
+    const SPC_USDT_PairAddress = await LFactory.getPair(WBETHJSON.address, USDTJSON.address);
+    console.log("SPC-USDT LP addresss:", SPC_USDT_PairAddress)
+    await writeAddr(SPC_USDT_PairAddress, "SPC_USDT_PairAddress");
 
 
-    // createPair CITY-SPC LP 
-    const _CITY_SPC_PairAddress = await LFactory.createPair(CITYJSON.address, WSPCJSON.address);
-    await _CITY_SPC_PairAddress.wait();
-    const CITY_SPC_PairAddress = await LFactory.getPair(CITYJSON.address, WSPCJSON.address);
-    console.log("CITY-SPC LP addresss:", CITY_SPC_PairAddress)
-    await writeAddr(CITY_SPC_PairAddress, "CITY_SPC_PairAddress");
+    // createPair ROBO-SPC LP 
+    const _ROBO_SPC_PairAddress = await LFactory.createPair(ROBOJSON.address, WBETHJSON.address);
+    await _ROBO_SPC_PairAddress.wait();
+    const ROBO_SPC_PairAddress = await LFactory.getPair(ROBOJSON.address, WBETHJSON.address);
+    console.log("ROBO-SPC LP addresss:", ROBO_SPC_PairAddress)
+    await writeAddr(ROBO_SPC_PairAddress, "ROBO_SPC_PairAddress");
 
   }
 
