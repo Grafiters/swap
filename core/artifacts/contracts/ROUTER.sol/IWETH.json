@@ -1,6 +1,6 @@
 {
   "_format": "hh-sol-artifact-1",
-  "contractName": "IWBETH",
+  "contractName": "IWETH",
   "sourceName": "contracts/ROUTER.sol",
   "abi": [
     {

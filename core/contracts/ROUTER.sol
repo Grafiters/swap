@@ -282,7 +282,7 @@ library UniswapV2Library {
                 hex'ff',
                 factory,
                 keccak256(abi.encodePacked(token0, token1)),
-                hex'8aa159a93a2666b68f4b61e6707223b90370163dd24dd6a27ae42b1402f19154' // init code hash
+                hex'6c4d683a0d60080f85c3568b38091bcd20111b695602aa1cb64e5f2b46a9ddf8' // init code hash
             ))));
     }
 
@@ -364,7 +364,7 @@ interface IWETH {
     function withdraw(uint) external;
 }
 
-contract SpcV2Router02 is IUniswapV2Router02 {
+contract RoboV2Router02 is IUniswapV2Router02 {
     using SafeMath for uint;
 
     address public immutable override factory;

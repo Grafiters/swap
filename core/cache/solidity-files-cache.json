@@ -141,8 +141,8 @@
       ]
     },
     "/home/back-dev/Documents/alone/js/contracts/swap_contract_creator/core/contracts/ROUTER.sol": {
-      "lastModificationDate": 1732763987250,
-      "contentHash": "8c1d415727b58454f00e74aa99a2ec69",
+      "lastModificationDate": 1733301217324,
+      "contentHash": "57c3ade6c665af4964de24c50564181c",
       "sourceName": "contracts/ROUTER.sol",
       "solcConfig": {
         "version": "0.6.6",
@@ -177,7 +177,7 @@
         "IUniswapV2Pair",
         "IUniswapV2Router01",
         "IUniswapV2Router02",
-        "IWBETH",
+        "IWETH",
         "RoboV2Router02",
         "SafeMath",
         "TransferHelper",
