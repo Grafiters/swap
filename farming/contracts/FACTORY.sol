@@ -109,7 +109,7 @@ interface IUniswapV2Callee {
     function uniswapV2Call(address sender, uint amount0, uint amount1, bytes calldata data) external;
 }
 
-contract SpcSwapFactory is IUniswapV2Factory {
+contract RoboSwapFactory is IUniswapV2Factory {
     address public feeTo;
     address public feeToSetter;
 

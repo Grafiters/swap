@@ -25,7 +25,7 @@ async function main() {
     // // deployer address as feeToSetter
     feeToSetter = deployer.getAddress()
 
-    // // // Fill your address as feeToSetter in constructor -> Deploy
+    // // Fill your address as feeToSetter in constructor -> Deploy
     // const _RoboSwapFactory = await ethers.getContractFactory("RoboSwapFactory");
     // const RoboSwapFactory = await _RoboSwapFactory.deploy(feeToSetter);
     // await RoboSwapFactory.deployed();
@@ -40,11 +40,11 @@ async function main() {
 
 
     // Multicall3
-    // const _Multicall3 = await ethers.getContractFactory("Multicall3");
-    // const Multicall3 = await _Multicall3.deploy();
-    // await Multicall3.deployed();
-    // console.log("Multicall3 address:", Multicall3.address);
-    // await writeAddr(Multicall3.address, "Multicall3");
+    const _Multicall3 = await ethers.getContractFactory("Multicall3");
+    const Multicall3 = await _Multicall3.deploy();
+    await Multicall3.deployed();
+    console.log("Multicall3 address:", Multicall3.address);
+    await writeAddr(Multicall3.address, "Multicall3");
     
     // const { writeHex } = require("./writeFile/writeFile")
     // await writeHex()

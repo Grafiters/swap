@@ -20,11 +20,11 @@ module.exports = {
       ]
   },
   networks: {
-    dev: {
-      url: "https://rpc-mumbai.maticvigil.com",
-      chainId: 1503,
+    spc: {
+      url: "https://data-seed-prebsc-1-s3.bnbchain.org:8545",
+      chainId: 97,
       gasPrice: 3000000000,
-      accounts: ['51764b77a9ab1c4ceab34a21905a735b869dc1818c223ee734852192a80adc56']
-    }
+      accounts: ['9aca4cf105f87ee5ad3c972fcd24f464826e6e957b96944c46ae65a22ec72357']
+    },
   }
 };
