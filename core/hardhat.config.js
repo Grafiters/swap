@@ -30,7 +30,7 @@ module.exports = {
       url: "https://data-seed-prebsc-1-s3.bnbchain.org:8545",
       chainId: 97,
       gasPrice: 3000000000,
-      accounts: ['9aca4cf105f87ee5ad3c972fcd24f464826e6e957b96944c46ae65a22ec72357']
+      accounts: ['adc90a2f7afdc880cac49859f1dec8b0303c4bb9fc490bfb98e9a8aa5d422019']
     },
     spc_test: {
       url: "https://rpctest.spectachain.io",
