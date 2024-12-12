@@ -26,6 +26,12 @@ module.exports = {
       gasPrice: 3000000000,
       accounts: ['9aca4cf105f87ee5ad3c972fcd24f464826e6e957b96944c46ae65a22ec72357']
     },
+    beth: {
+      url: "https://rpc.bethscan.io",
+      chainId: 1605,
+      gasPrice: 3000000000,
+      accounts: ['6ce09c80687e4e8e3881b2555971c4a1fbbb2ca55dfa1e06e4d14bde5c624e08']
+    },
     spc_test: {
       url: "https://rpctest.spectachain.io",
       chainId: 1503,
